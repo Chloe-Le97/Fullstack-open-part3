@@ -3,8 +3,10 @@ const app = express();
 app.use(express.json());
 var morgan = require('morgan');
 
-const cors = require('cors')
-app.use(cors())
+app.use(express.static('build'));
+
+const cors = require('cors');
+app.use(cors());
 
 // setup the logger 
 app.use(morgan('tiny'));
@@ -93,8 +95,7 @@ let persons = [
   
   app.use(unknownEndpoint);
 
-
 var PORT = process.env.PORT || 3001;
 
-app.listen(PORT);
+app.listen(process.env.PORT || 3001);
 console.log(`Server running on port ${PORT}`);
