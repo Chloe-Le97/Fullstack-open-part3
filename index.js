@@ -3,6 +3,9 @@ const app = express();
 app.use(express.json());
 var morgan = require('morgan');
 
+const cors = require('cors')
+app.use(cors())
+
 // setup the logger 
 app.use(morgan('tiny'));
 
