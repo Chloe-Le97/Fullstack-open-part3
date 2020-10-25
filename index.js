@@ -125,6 +125,7 @@ app.use(morgan('tiny'));
   app.use(errorHandler)
 
 
-  var PORT = process.env.PORT || 3001;
-  app.listen(process.env.PORT || 3001);
-  console.log(`Server running on port ${PORT}`);
+  const port = process.env.PORT
+  app.listen(port, () => {
+      console.log(`Server running on port ${port}`)
+  })
